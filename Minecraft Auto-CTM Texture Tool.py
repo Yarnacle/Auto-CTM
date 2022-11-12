@@ -2241,7 +2241,7 @@ for i in range(50):
     for j in range(50):
         if (i + j) % 2:
             pixels[i,j] = (200,200,200)
-bg = bg.resize((500,500),Image.NEAREST)
+bg = bg.resize((500,500),Image.Resampling.NEAREST)
 bgPhotoImage = ImageTk.PhotoImage(bg)
 bgLabel = tk.Label(imgFrame,image = bgPhotoImage).grid(row = 0,column = 0)
 uploadButton = tk.Button(imgFrame,text = 'Upload',command = lambda:upload()).grid(row = 0,column = 0)
@@ -2271,7 +2271,7 @@ def display():
     factor = min([float(500 / openImg.size[0]),float(500 / openImg.size[1])])
     width = int(openImg.size[0] * factor)
     height = int(openImg.size[1] * factor)
-    img = Image.alpha_composite(bg,img.resize((width,height),Image.NEAREST).convert('RGBA'))
+    img = Image.alpha_composite(bg,img.resize((width,height),Image.Resampling.NEAREST).convert('RGBA'))
     img = ImageTk.PhotoImage(img)
     imgLabel = tk.Label(imgFrame,image = img).grid(row = 0,column = 0)
     enable(outlineFrame)
