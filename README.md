@@ -5,5 +5,5 @@ Originally posted in https://www.reddit.com/r/Minecraft/comments/svdaqx/autoctm_
 
 Built into executable using pyinstaller:
 ```
-pyinstaller --onefile --windowed --icon=icon.ico "Minecraft Auto-CTM Texture Tool.py"
+pyinstaller --onefile --windowed --icon=icon.ico --add-data "icon.ico:." "Minecraft Auto-CTM Texture Tool.py"
 ```
